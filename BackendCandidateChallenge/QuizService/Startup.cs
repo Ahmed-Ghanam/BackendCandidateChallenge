@@ -52,7 +52,11 @@ public class Startup
         var migrationResourceNames = assembly.GetManifestResourceNames()
             .Where(x => x.EndsWith(".sql"))
             .OrderBy(x => x);
+
+        //TODO I prefer using parentheses with program flow control statements.
         if (!migrationResourceNames.Any()) throw new System.Exception("No migration files found!");
+
+        //TODO The migrationResourceNames is begin enumerated twice. It will be better to force enumeration at the variable initialization by converting it to an array or a list.
         foreach (var resourceName in migrationResourceNames)
         {
             var sql = GetResourceText(assembly, resourceName);

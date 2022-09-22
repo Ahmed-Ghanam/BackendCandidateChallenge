@@ -4,6 +4,7 @@ namespace QuizService.Model;
 
 public class QuizResponseModel
 {
+    // TODO I like to have every class in its own file.
     public class AnswerItem
     {
         public int Id { get; set; }
